@@ -22,6 +22,7 @@ import org.skycastle.skillslib.levels.SkillLevel;
 // Either in free-form descriptions, or maybe define a set of descriptions / skill types?
 // Maybe instead of all freeform formulas, allow designers to define skill types, with some parameters (difficulty, dependent skills, etc)?
 // Each skill would then specify what skill type it is, and the skill type would provide a description about how to learn the skill.
+// TODO: Different implementations, a simple SkillType with some property style configuration, and a full fledged formula based SkillType  implementation
 public interface SkillType {
 
     /**
