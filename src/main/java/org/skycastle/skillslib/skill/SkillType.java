@@ -31,6 +31,15 @@ public interface SkillType {
     SkillTypeInfo getSkillTypeInfo();
 
     /**
+     * Learn a new skill.
+     *
+     * @param skill new skill to learn.
+     * @param characterState Current physical and mental state of the character.
+     * @return SkillLevel initialized to some start values.
+     */
+    SkillLevel learnSkill(Skill skill, CharacterState characterState);
+
+    /**
      * Calculates the change to a skill level as a result of usage.
      *
      * @param skillLevel the skill level to update.
@@ -59,7 +68,11 @@ public interface SkillType {
      *                        (0 = no communication possible, 1 = perfect communication, -1 = faulty training, 2 = excellent training).
      * @param secondsStudied time used to train.
      */
-    void train(SkillLevel skillLevel, CharacterState characterState, double trainerSkill, double trainingQuality, double secondsStudied);
+    void trainSkill(SkillLevel skillLevel,
+                    CharacterState characterState,
+                    double trainerSkill,
+                    double trainingQuality,
+                    double secondsStudied);
 
     /**
      * Adds skillpoints, e.g. during character creation, or if given as levelup or other rewards.

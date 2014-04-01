@@ -1,6 +1,8 @@
 package org.skycastle.skillslib.levels;
 
 import org.skycastle.skillslib.CharacterState;
+import org.skycastle.skillslib.SkillService;
+import org.skycastle.skillslib.skill.Skill;
 
 import java.util.List;
 
@@ -21,5 +23,13 @@ public interface SkillSet {
      * @return the skills and their levels in this skillset.
      */
     List<SkillLevel> getSkillLevels();
+
+    /**
+     * Learn a new skill, and add it to this SkillSet.
+     *
+     * @param skill new skill to learn.
+     * @param characterState Current physical and mental state of the character.
+     */
+    void learnSkill(Skill skill, CharacterState characterState);
 
 }
