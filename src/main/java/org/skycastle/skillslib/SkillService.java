@@ -2,6 +2,9 @@ package org.skycastle.skillslib;
 
 import org.flowutils.Symbol;
 import org.flowutils.service.Service;
+import org.skycastle.skillslib.skill.Skill;
+import org.skycastle.skillslib.skill.SkillCategory;
+import org.skycastle.skillslib.skill.SkillType;
 
 import java.io.File;
 import java.io.Reader;
@@ -23,10 +26,17 @@ public interface SkillService extends Service {
     String exportSkills();
 
     Skill getSkill(Symbol skillId);
+    SkillType getSkillType(Symbol skillTypeId);
+    SkillCategory getCategory(Symbol categoryId);
+
+    List<Skill> getSkills();
+    List<SkillCategory> getCategories();
+    List<SkillType> getSkillTypes();
 
     List<Class> getClassesNeededForSerializingSkills();
 
     List<Class> getClassesNeededForSerializingSkillSets();
+
 
 
 
