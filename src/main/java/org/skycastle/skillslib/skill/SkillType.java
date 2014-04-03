@@ -23,6 +23,11 @@ import org.skycastle.skillslib.levels.SkillLevel;
 // Maybe instead of all freeform formulas, allow designers to define skill types, with some parameters (difficulty, dependent skills, etc)?
 // Each skill would then specify what skill type it is, and the skill type would provide a description about how to learn the skill.
 // TODO: Different implementations, a simple SkillType with some property style configuration, and a full fledged formula based SkillType  implementation
+// TODO: Skill checks could use gaussian distributed random checks (skill performance is gaussian distributed in reality)
+// IDEA: Knowing a skill to a certain level might unlock some new abilities or bonuses
+// TODO: Some skills should be innate or freely provided by the background to a zero or low level, others require learning them
+    // before they can be used at all
+// IDEA: Focus or concentration, will begin to slip if doing repetitive things, best to change what one does now and then  Skill fatigue?
 public interface SkillType {
 
     /**
@@ -73,6 +78,8 @@ public interface SkillType {
                     double trainerSkill,
                     double trainingQuality,
                     double secondsStudied);
+
+    // TODO: Research skill?  Learning without a trainer
 
     /**
      * Adds skillpoints, e.g. during character creation, or if given as levelup or other rewards.

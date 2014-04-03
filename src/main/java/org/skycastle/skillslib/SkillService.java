@@ -33,9 +33,15 @@ public interface SkillService extends Service {
     List<SkillCategory> getCategories();
     List<SkillType> getSkillTypes();
 
-    List<Class> getClassesNeededForSerializingSkills();
+    /**
+     * @return classes used for loading configuration data for the skill service.
+     */
+    List<Class> getClassesNeededForServerSerialization();
 
-    List<Class> getClassesNeededForSerializingSkillSets();
+    /**
+     * @return classes used for client-server communication.
+     */
+    List<Class> getClassesNeededForClientSerialization();
 
 
 
